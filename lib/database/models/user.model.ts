@@ -1,0 +1,12 @@
+import { Schema, models, model } from "mongoose";
+
+const UserSchema = new Schema({
+    clearId: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true },
+    username: { type: String, required: true, unique: true },
+    firstname: { type: String, required: true },
+    lastname: { type: String, required: true },
+    photo: { type: String, required: true }
+});
+
+export const User = models.User || model('User', UserSchema);
